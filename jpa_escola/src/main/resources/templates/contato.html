@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-XFcwqezKXV1XXx2zLplIh5KuMkxnuB3ga3T3sbZkhRSBhr01nq7/BHBU7kugzV67DF17kVWt6r+INxXmBYA8Rg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <div th:include="~{fragmentos/head}"><!-- menu de estilização --></div>
+    <link rel="stylesheet" th:href="@{css/style-login.css}">
+</head>
+
+<body>
+    <header>
+        <h1>Contato</h1>
+    </header>
+    <div class="container">
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <footer>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; Escola XYZ 1980 - 2024. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
