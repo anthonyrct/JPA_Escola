@@ -4,12 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
-
 @Controller
 public class IndexController {
 
-    
     @GetMapping("/home")
     public String acessoHomePage() {
         return "index";
@@ -31,7 +28,7 @@ public class IndexController {
     }
 
     @GetMapping("/cadastro-professor")
-    public String acessoPageCadastroProf(){
+    public String acessoPageCadastroProf() {
         return "cadastro/cadastro-professor";
     }
 
@@ -44,13 +41,11 @@ public class IndexController {
     public String acessoPageCadastroAluno() {
         return "cadastro/cadastro-aluno";
     }
-    
-    
-    
-    
-    
 
-    
+    @GetMapping("/contato")
+    public String acessoPageContato() {
+        return "contato";
+    }
     
 
 }
