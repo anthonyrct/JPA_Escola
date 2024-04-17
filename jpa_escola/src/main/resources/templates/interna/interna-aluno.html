@@ -5,10 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interna - ADM</title>
+    <div th:insert="~{fragmentos/head}"></div>
+    <link rel="stylesheet" th:href="@{css/style-interna.css}">
 </head>
 
 <body>
-    <h1>Página Interna Aluno</h1>
+    <div class="container">
+        <div th:insert="~{fragmentos/header :: header}"><!-- barra de menu --></div>
+        <h1>Página Interna Aluno</h1>
+        <div class="card">
+            <div class="card-title">Meus Alunos</div>
+            <div class="card-content">Clique no link abaixo para visualizar seus alunos.</div>
+            <a href="/meus-alunos" class="card-link">Meus Alunos</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Dar Notas</div>
+            <div class="card-content">Clique no link abaixo para dar notas aos seus alunos.</div>
+            <a href="/dar-notas" class="card-link">Dar Notas</a>
+        </div>
+    </div>
 </body>
 
 </html>
