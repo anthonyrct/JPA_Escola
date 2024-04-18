@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import webapp.jpa_escola.Model.Administrador;
 import webapp.jpa_escola.Model.Aluno;
 import webapp.jpa_escola.Repository.AlunoRepository;
+
 
 @Controller
 public class AlunoController {
@@ -18,7 +20,33 @@ public class AlunoController {
     @Autowired
     AlunoRepository ar;
 
+     @Autowired
+    findByRa  Vr;
+
     boolean acessoInternoAluno = false;
+
+    @PostMapping("cadastrar-aluno")
+    public ModelAndView cadastroAdmBD(Aluno aluno, RedirectAttributes attributes) {
+
+        boolean verificaRa = Vr.existsByRa(aluno.getRa());
+
+        ModelAndView mv = new ModelAndView("redirect:/login-aluno");
+
+        if (verificaRa) {
+            ar.save(aluno);
+            String mensagem = "Cadastro Realizado com sucesso";
+            System.out.println(mensagem);
+            attributes.addFlashAttribute("msg", mensagem);
+            attributes.addFlashAttribute("classe", "vermelho");
+        } else {
+            String mensagem = "Cadastro Não Realizado";
+            System.out.println(mensagem);
+            attributes.addFlashAttribute("msg", mensagem);
+            attributes.addFlashAttribute("classe", "vermelho");
+        }
+
+        return mv;
+    }
 
     @PostMapping("acesso-aluno")
     public ModelAndView acessoAlunoLogin(@RequestParam String ra, @RequestParam String senha,
