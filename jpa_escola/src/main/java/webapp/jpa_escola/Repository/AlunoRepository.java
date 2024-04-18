@@ -6,5 +6,6 @@ import webapp.jpa_escola.Model.Aluno;
 
 public interface AlunoRepository extends CrudRepository <Aluno, String>{
     
-    Aluno findByCpf(String cpf);
+    Aluno findByRa (String ra);
 }
+

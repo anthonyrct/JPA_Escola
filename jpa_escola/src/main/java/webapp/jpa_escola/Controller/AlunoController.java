@@ -11,7 +11,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import webapp.jpa_escola.Model.Aluno;
 import webapp.jpa_escola.Repository.AlunoRepository;
-import webapp.jpa_escola.Repository.VerificaCadastroAlunoRepository;
 
 @Controller
 public class AlunoController {
@@ -19,19 +18,16 @@ public class AlunoController {
     @Autowired
     AlunoRepository ar;
 
-    @Autowired
-    VerificaCadastroAlunoRepository vcar;
-
     boolean acessoInternoAluno = false;
 
     @PostMapping("acesso-aluno")
-    public ModelAndView acessoAlunoLogin(@RequestParam String cpf, @RequestParam String senha,
+    public ModelAndView acessoAlunoLogin(@RequestParam String ra, @RequestParam String senha,
             RedirectAttributes attributes) {
-        ModelAndView mv = new ModelAndView("redirect:/interna-adm");
+        ModelAndView mv = new ModelAndView("redirect:/interna-aluno");
         try {
-            boolean acessoCPF = ar.existsById(cpf);
-            boolean acessoSenha = senha.equals(ar.findByCpf(cpf).getCpf());
-            if (acessoCPF && acessoSenha) {
+            boolean acessoRA = ar.existsById(ra);
+            boolean acessoSenha = senha.equals(ar.findByRa(ra).getRa());
+            if (acessoRA && acessoSenha) {
                 acessoInternoAluno = true;
             } else {
                 String mensagem = "Login Não Efetuado";
@@ -46,7 +42,7 @@ public class AlunoController {
             System.out.println(mensagem);
             attributes.addFlashAttribute("msg", mensagem);
             attributes.addFlashAttribute("classe", "vermelho");
-            mv.setViewName("redirect:/login-adm");
+            mv.setViewName("redirect:/login-aluno");
             return mv;
         }
     }

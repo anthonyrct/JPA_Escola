@@ -4,24 +4,22 @@ import java.io.Serializable;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-
 @Entity
 public class Aluno implements Serializable {
 
     // atributos
     @Id
-    private String cpf;
+    private String ra;
     private String nome;
     private String email;
     private String senha;
 
-    // metodos
-    public String getCpf() {
-        return cpf;
+    public String getRa() {
+        return ra;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setRa(String ra) {
+        this.ra = ra;
     }
 
     public String getNome() {
