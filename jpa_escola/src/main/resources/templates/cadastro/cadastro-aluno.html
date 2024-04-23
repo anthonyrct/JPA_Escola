@@ -12,31 +12,38 @@
 
 <body>
     <div class="container">
-        <h1>Cadastrar Aluno</h1>
-        <form id="cadastro-aluno-form" action="#" method="post">
-            <div class="form-group">
-                <label for="nome">Nome do Aluno:</label>
-                <input type="text" id="nome" name="nome" required>
+        <div th:insert="~{fragmentos/header :: header}"><!-- barra de menu --></div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="register-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Cadastro do Aluno</h3>
+                        </div>
+                        <div class="card-body">
+                            <form method="post" action="cadastrar-adm">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Nome" name="nome">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="RA" name="ra">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Senha">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Confirmar Senha"
+                                        name="senha">
+                                </div>
+                                <button type="submit" class="btn btn-block btn-register"><i
+                                        class="fas fa-user-plus"></i> Cadastrar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email do Aluno:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="ra">RA do Aluno:</label>
-                <input type="text" id="ra" name="ra" required>
-            </div>
-            <div class="form-group">
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" required>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Cadastrar Aluno">
-            </div>
-        </form>
-        <div class="success-message" id="success-message" style="display: none;">Aluno cadastrado com sucesso.</div>
+        </div>
     </div>
-
     <div class="footer">
         <footer>
             <p>&copy; Escola XYZ 1980 - 2024. Todos os direitos reservados.</p>

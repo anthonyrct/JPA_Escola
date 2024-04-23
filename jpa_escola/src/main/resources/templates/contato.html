@@ -10,29 +10,38 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
         <div th:insert="~{fragmentos/header :: header}"><!-- barra de menu --></div>
     <div th:include="~{fragmentos/head}"><!-- menu de estilização --></div>
-    <link rel="stylesheet" th:href="@{css/style-contato.css}">
+    <link rel="stylesheet" th:href="@{css/style-login.css}">
 </head>
 
 <body>
-    <header>
-        <h1>Contato</h1>
-    </header>
+    
     <div class="container">
-        <form action="#" method="post">
-            <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="login-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Entre em Contato</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="#" method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="CPF do Usuário" name="cpf">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Senha" name="senha">
+                                </div>
+                                <button type="submit" class="btn btn-block btn-login"><i class="fas fa-sign-in-alt"></i>
+                                    Entrar</button>
+                                <a href=""><button type="button" class="btn btn-block btn-login"><i
+                                            class="fas fa-sign-in-alt"></i> Cadastrar</button></a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-            </div>
-            <button type="submit">Enviar</button>
-        </form>
+        </div>
     </div>
     <footer>
         <div class="social-icons">
