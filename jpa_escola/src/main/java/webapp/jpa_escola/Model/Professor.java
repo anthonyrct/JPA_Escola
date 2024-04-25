@@ -4,24 +4,17 @@ import java.io.Serializable;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-
 @Entity
 public class Professor implements Serializable {
     // atributos
     @Id
-    private String cpf;
+    private String emailEscolar;
     private String nome;
-    private String email;
     private String senha;
+    private String nome_aluno;
+    private String materia;
 
     // metodos
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
 
     public String getNome() {
         return nome;
@@ -31,12 +24,12 @@ public class Professor implements Serializable {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailEscolar() {
+        return emailEscolar;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailEscolar(String emailEscolar) {
+        this.emailEscolar = emailEscolar;
     }
 
     public String getSenha() {
@@ -45,6 +38,22 @@ public class Professor implements Serializable {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getNome_aluno() {
+        return nome_aluno;
+    }
+
+    public void setNome_aluno(String nome_aluno) {
+        this.nome_aluno = nome_aluno;
+    }
+
+    public String getMateria() {
+        return materia;
+    }
+
+    public void setMateria(String materia) {
+        this.materia = materia;
     }
 
 }

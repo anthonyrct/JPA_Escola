@@ -47,9 +47,26 @@ public class AlunoController {
         }
     }
 
+
+    @GetMapping("/interna-aluno")
+    public ModelAndView acessoPageInternaAluno(RedirectAttributes attributes) {
+        ModelAndView mv = new ModelAndView("interna/interna-aluno");
+        if (acessoInternoAluno) {
+            System.out.println("Acesso Permitido");
+        } else {
+            String mensagem = "Acesso não Permitido - faça Login";
+            System.out.println(mensagem);
+            mv.setViewName("redirect:/login-aluno");
+            attributes.addFlashAttribute("msg", mensagem);
+            attributes.addFlashAttribute("classe", "vermelho");
+        }
+        return mv;
+    }
+
+
     @PostMapping("logout-aluno")
     public ModelAndView logoutAluno(RedirectAttributes attributes) {
-        ModelAndView mv = new ModelAndView("redirect:/interna-aluno");
+        ModelAndView mv = new ModelAndView("redirect:index");
         attributes.addFlashAttribute("msg", "Logout Efetuado");
         attributes.addFlashAttribute("classe", "verde");
         acessoInternoAluno = false;

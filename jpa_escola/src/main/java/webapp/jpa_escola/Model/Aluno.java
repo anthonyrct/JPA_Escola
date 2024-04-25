@@ -13,6 +13,8 @@ public class Aluno implements Serializable {
     private String nome;
     private String email;
     private String senha;
+    private String docente;
+    
 
     public String getRa() {
         return ra;
@@ -44,6 +46,14 @@ public class Aluno implements Serializable {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getDocente() {
+        return docente;
+    }
+
+    public void setDocente(String docente) {
+        this.docente = docente;
     }
 
 }

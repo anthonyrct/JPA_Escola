@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import webapp.jpa_escola.Model.Professor;
 
 public interface ProfessorRepository extends CrudRepository<Professor, String>{
-    Professor findByEmail (String emailEscolar);
+    Professor findByEmailEscolar (String emailEscolar);
 }
