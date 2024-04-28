@@ -12,6 +12,7 @@ public class Aluno implements Serializable {
     private String ra;
     private String nome;
     private String email;
+    private double nota;
     private String senha;
     private String docente;
     
@@ -54,6 +55,14 @@ public class Aluno implements Serializable {
 
     public void setDocente(String docente) {
         this.docente = docente;
+    }
+
+    public double getNota() {
+        return nota;
+    }
+
+    public void setNota(double nota) {
+        this.nota = nota;
     }
 
 }

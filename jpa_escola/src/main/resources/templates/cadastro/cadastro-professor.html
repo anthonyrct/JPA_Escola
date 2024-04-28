@@ -26,7 +26,8 @@
                                     <input type="text" class="form-control" placeholder="Nome" name="nome">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="emailEscolar" name="emailEscolar">
+                                    <input type="email" class="form-control" placeholder="emailEscolar"
+                                        name="emailEscolar">
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control" placeholder="Senha">
@@ -35,8 +36,17 @@
                                     <input type="password" class="form-control" placeholder="Confirmar Senha"
                                         name="senha">
                                 </div>
-                                <button type="submit" class="btn btn-block btn-register"><i
-                                        class="fas fa-user-plus"></i> Cadastrar</button>
+
+                                <div class="form-group">
+                                    <label for="materia">Matéria:</label><br>
+                                    <select id="materia" name="materia">
+                                        <option value="matematica">Matemática</option>
+                                        <option value="portugues">Português</option>
+                                        <option value="ciencias">Ciências</option>
+                                        <!-- Adicionar as outras materia depois(essas são apenas para teste)-->
+                                    </select>
+                                    <button type="submit" class="btn btn-block btn-register"><i
+                                            class="fas fa-user-plus"></i> Cadastrar</button>
                             </form>
                         </div>
                     </div>
@@ -44,12 +54,12 @@
             </div>
         </div>
     </div>
-        
-        <div class="footer">
-            <footer>
-                <p>&copy; Escola XYZ 1980 - 2024. Todos os direitos reservados.</p>
-            </footer>
-        </div>
+
+    <div class="footer">
+        <footer>
+            <p>&copy; Escola XYZ 1980 - 2024. Todos os direitos reservados.</p>
+        </footer>
+    </div>
 </body>
 
 </html>
