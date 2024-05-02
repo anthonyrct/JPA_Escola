@@ -13,6 +13,7 @@ public class Professor implements Serializable {
     private String senha;
     private String nome_aluno;
     private String materia;
+    private String nota_aluno;
 
     // metodos
 
@@ -54,6 +55,14 @@ public class Professor implements Serializable {
 
     public void setMateria(String materia) {
         this.materia = materia;
+    }
+
+    public String getNota_aluno() {
+        return nota_aluno;
+    }
+
+    public void setNota_aluno(String nota_aluno) {
+        this.nota_aluno = nota_aluno;
     }
 
 }

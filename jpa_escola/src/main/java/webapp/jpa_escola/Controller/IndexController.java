@@ -47,14 +47,19 @@ public class IndexController {
         return "contato";
     }
 
-    @GetMapping("/interna-card-atividade") 
+    @GetMapping("card-atividade") 
     public String acessoPageInternaAtivadade() {
         return "interna/interna-card-atividade"; 
     }
 
-    @GetMapping("/intena-card-notas")
+    @GetMapping("card-notas")
     public String acessoPageInternaNotas() {
         return "interna/interna-card-notas";
+    }
+
+    @GetMapping("/logout")
+    public String acessoPageLogout() {
+        return "index";
     }
     
 
