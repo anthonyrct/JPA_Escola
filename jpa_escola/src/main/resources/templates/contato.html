@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-XFcwqezKXV1XXx2zLplIh5KuMkxnuB3ga3T3sbZkhRSBhr01nq7/BHBU7kugzV67DF17kVWt6r+INxXmBYA8Rg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <div th:insert="~{fragmentos/header :: header}"><!-- barra de menu --></div>
+    <div th:insert="~{fragmentos/header :: header}"><!-- barra de menu --></div>
     <div th:include="~{fragmentos/head}"><!-- menu de estilização --></div>
     <link rel="stylesheet" th:href="@{css/style-login.css}">
 </head>
 
 <body>
-    
+
     <div class="container">
 
         <div class="row justify-content-center">
@@ -34,8 +34,6 @@
                                 </div>
                                 <button type="submit" class="btn btn-block btn-login"><i class="fas fa-sign-in-alt"></i>
                                     Entrar</button>
-                                <a href=""><button type="button" class="btn btn-block btn-login"><i
-                                            class="fas fa-sign-in-alt"></i> Cadastrar</button></a>
                             </form>
                         </div>
                     </div>

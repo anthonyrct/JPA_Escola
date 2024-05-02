@@ -46,6 +46,16 @@ public class IndexController {
     public String acessoPageContato() {
         return "contato";
     }
+
+    @GetMapping("/interna-card-atividade") 
+    public String acessoPageInternaAtivadade() {
+        return "interna/interna-card-atividade"; 
+    }
+
+    @GetMapping("/intena-card-notas")
+    public String acessoPageInternaNotas() {
+        return "interna/interna-card-notas";
+    }
     
 
 }

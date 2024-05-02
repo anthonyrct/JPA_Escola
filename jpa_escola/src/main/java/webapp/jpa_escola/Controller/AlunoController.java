@@ -66,7 +66,7 @@ public class AlunoController {
 
     @PostMapping("logout-aluno")
     public ModelAndView logoutAluno(RedirectAttributes attributes) {
-        ModelAndView mv = new ModelAndView("redirect:index");
+        ModelAndView mv = new ModelAndView("redirect:/login-aluno");
         attributes.addFlashAttribute("msg", "Logout Efetuado");
         attributes.addFlashAttribute("classe", "verde");
         acessoInternoAluno = false;
